@@ -7,16 +7,13 @@ package com.example.spring.project.controller;
 
 import com.example.spring.project.dao.entity.CustomerEntity;
 import com.example.spring.project.model.CustomerDto;
-import com.example.spring.project.model.NewClass;
 import com.example.spring.project.service.CustomerService;
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -58,16 +55,7 @@ public class CustomerRestController {
     public void saveCustomer(@RequestBody CustomerDto customer) {
         customerService.saveCustomer(customer);
     }
-    
-    @PutMapping("/test/{index}")
-    public List<NewClass> examplePutMethod(@RequestBody NewClass newClass, @PathVariable("index") int id) {
-        newClass.setId(id);
-        NewClass newClass2 = newClass;
-        List<NewClass> list = new ArrayList();
-        list.add(newClass);
-        list.add(newClass2);
-        return list;
-    }
+
 //    http://localhost:7078/root/age/25/name/Elnur
 //    http://localhost:7078/root/age/25/name/Elnur?surname=Khalilov
     @DeleteMapping("/age/{age}/name/{name}")
