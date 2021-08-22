@@ -58,16 +58,6 @@ public class CustomerRestController {
     public void saveCustomer(@RequestBody CustomerDto customer) {
         customerService.saveCustomer(customer);
     }
-
-    @GetMapping("/test")
-    public String getText() {
-        return "Hello World!";
-    }
-    
-    @PostMapping("/test")
-    public void setText(@RequestBody NewClass newClass) {
-        System.out.println(newClass.getTest());
-    }
     
     @PutMapping("/test/{index}")
     public List<NewClass> examplePutMethod(@RequestBody NewClass newClass, @PathVariable("index") int id) {
