@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <table class="table table-hover table-border">
+        <thead class="table table-dark">
+            <td >Name</td>
+            <td>Surname</td>
+            <td>Age</td>
+        </thead>
+        <tbody th:each = "customer : ${customers}">
+            <span th:if="${customer.name != 'Emil'}">
+            <td th:text = "${customer.name}"></td>
+            <td th:text = "${customer.surname}"></td>
+            <td th:text = "${customer.age}">
+            </span>
+
+        </tbody>
+    </table>
+
+</body>
+</html>
